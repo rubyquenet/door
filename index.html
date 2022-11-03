@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Untitled</title>
+  </head>
+  <body>
+    <div class="doorway">
+      <div class="door">
+        <div class="doorknob">
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .doorknob{
+      	background-color: red;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: absolute;
+        left: 160px;
+        top: 120px;
+      }
+      
+      .doorway {
+        background-color: yellow;
+        position: relative;
+        width: 200px;
+        height: 300px;
+
+        margin: 0 auto;
+        margin-top: 50px;
+      }
+
+      .door {
+        background-color: blue;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 200px;
+        height: 300px;
+
+        transform-origin: left;
+        transition: all 1s ease-in-out;
+      }
+
+      .doorOpen {
+        transform: perspective(1200px) 
+          translateZ(0px) 
+          translateX(0px) 
+          translateY(0px) 
+          rotateY(-105deg);
+      }
+    </style>
+
+    <script>
+      const element = document.querySelector(".door");
+
+      function toggleDoor() {
+        element.classList.toggle("doorOpen");
+        console.log("open sesame");
+      }
+
+      element.addEventListener("click", toggleDoor);
+    </script>
+
+
+
+  </body>
+</html>
