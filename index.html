@@ -21,6 +21,9 @@
         position: absolute;
         left: 160px;
         top: 120px;
+        opacity: 1;
+        transition-delay: 0.7s;
+        transition-property: opacity;
       }
       
       .doorway {
@@ -52,17 +55,27 @@
           translateY(0px) 
           rotateY(-105deg);
       }
+      
+      .doorKnobHide{
+        
+        opacity: 0;
+      }
     </style>
 
     <script>
       const element = document.querySelector(".door");
-
+			const doorKnob = document.querySelector(".doorKnob");
+      
       function toggleDoor() {
         element.classList.toggle("doorOpen");
+        doorKnob.classList.toggle("doorKnobHide");
         console.log("open sesame");
       }
 
       element.addEventListener("click", toggleDoor);
+      
+      
+      
     </script>
 
 
